@@ -6,7 +6,7 @@ namespace Utilities
 {
     public abstract class Delays
     {
-        public static IEnumerator DelayedAction(float time, Action func)
+        public static IEnumerator DelayedAction(Action func, float time)
         {
             yield return new WaitForSeconds(time);
             func?.Invoke();

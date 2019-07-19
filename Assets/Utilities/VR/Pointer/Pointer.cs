@@ -6,7 +6,7 @@ namespace Utilities.VR.Pointer
     public class Pointer : MonoBehaviour
     {
         private Selectable _selectable;
-        
+
         //TODO: Change keycode to UnityXRInput
         [SerializeField] private KeyCode select;
 
@@ -27,16 +27,23 @@ namespace Utilities.VR.Pointer
 
                     if (_selectable == null) return;
 
-                    _selectable.IsHovering();
+                    _selectable.StartHovering();
 
                     if (Input.GetKeyDown(select))
                         _selectable.Selected();
+
+                    var amount = Input.GetAxis("Oculus_CrossPlatform_PrimaryIndexTrigger");
+                    print(amount);
+                    if (amount > 0.7f)
+                    {
+                        _selectable.Selected();
+                    }
                 }
                 else
                 {
                     try
                     {
-                        _selectable.Reset();
+                        _selectable.StopHovering();
                         _selectable = null;
                     }
                     catch (Exception)
@@ -50,7 +57,7 @@ namespace Utilities.VR.Pointer
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
                 try
                 {
-                    _selectable.Reset();
+                    _selectable.StopHovering();
                     _selectable = null;
                 }
                 catch (Exception)

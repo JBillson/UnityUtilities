@@ -1,23 +1,50 @@
+using System;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Utilities.VR.Pointer
 {
     public class Selectable : MonoBehaviour
     {
+        [Header("Settings")] public bool canReset;
+        [ShowIf("canReset")] public float resetTime = 2f;
 
-        public void IsHovering()
+        [Header("Events")] public UnityEvent onHoverStarted;
+        public UnityEvent onHoverStopped;
+        public UnityEvent onSelected;
+        public UnityEvent onSelectableReset;
+
+        private bool _isHovering;
+        private bool _hasBeenSelected;
+
+        public void StartHovering()
         {
-            print("Is Hovering");
+            if (_isHovering) return;
+            _isHovering = true;
+            onHoverStarted?.Invoke();
         }
-        
+
         public void Selected()
         {
-            print("Object Selected");
+            if (_hasBeenSelected) return;
+
+            _isHovering = false;
+            _hasBeenSelected = true;
+            onSelected?.Invoke();
+            StartCoroutine(Delays.DelayedAction(ResetSelectable, resetTime));
         }
 
-        public void Reset()
+        public void StopHovering()
         {
-            print("Reset");
+            _isHovering = false;
+            onHoverStopped?.Invoke();
+        }
+
+        public void ResetSelectable()
+        {
+            _hasBeenSelected = false;
+            onSelectableReset?.Invoke();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public abstract class ColorDebug
+    public class CustomDebug
     {
         public void Print(string message, string color)
         {

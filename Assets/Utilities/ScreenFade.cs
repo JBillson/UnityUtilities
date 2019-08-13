@@ -4,7 +4,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Utilities
+namespace UnityUtilities.Assets.Utilities
 {
     public class ScreenFade : MonoBehaviour
     {

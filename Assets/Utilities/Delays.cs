@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Utilities
+namespace UnityUtilities.Assets.Utilities
 {
-    public abstract class Delays
+    public static class Delays
     {
         public static IEnumerator DelayedAction(Action func, float time)
         {

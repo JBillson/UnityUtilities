@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Utilities.VR.Pointer
+namespace UnityUtilities.Assets.Utilities.VR.Pointer
 {
     public class Pointer : MonoBehaviour
     {

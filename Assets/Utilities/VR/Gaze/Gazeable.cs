@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Utilities.VR.Gaze
+namespace UnityUtilities.Assets.Utilities.VR.Gaze
 {
     public class Gazeable : MonoBehaviour
     {

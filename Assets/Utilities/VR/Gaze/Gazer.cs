@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Utilities.VR.Gaze
+namespace UnityUtilities.Assets.Utilities.VR.Gaze
 {
     public class Gazer : MonoBehaviour
     {

@@ -1,13 +1,18 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
-namespace Utilities
+namespace UnityUtilities.Assets.Utilities
 {
-    public class CustomDebug
+    public abstract class CustomDebug
     {
-        public void Print(string message, string color)
+        public static void Print(string message)
         {
+            Debug.Log(message);
+        }
+
+        public static void Print(string message, string color)
+        {
+            color = color.ToLower();
             try
             {
                 Debug.Log($"<color={color}>{message}</color>");

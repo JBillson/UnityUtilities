@@ -1,9 +1,8 @@
-using System;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Utilities.VR.Pointer
+namespace UnityUtilities.Assets.Utilities.VR.Pointer
 {
     public class Selectable : MonoBehaviour
     {

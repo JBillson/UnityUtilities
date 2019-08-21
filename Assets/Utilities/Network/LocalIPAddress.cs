@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 
-namespace _RepController.VideoSystem
+namespace UnityUtilities.Network
 {
     public abstract class LocalIPAddress
     {

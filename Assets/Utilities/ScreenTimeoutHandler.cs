@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-namespace UnityUtilities.Assets.Utilities
+namespace UnityUtilities
 {
-    public class ScreenTimeoutHandler : MonoBehaviour
+    public static class ScreenTimeoutHandler
     {
-        private void OnEnable()
+        public static void NeverSleep()
         {
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
         }
 
-        private void OnDisable()
+        public static void SystemSetting()
         {
             Screen.sleepTimeout = SleepTimeout.SystemSetting;
         }

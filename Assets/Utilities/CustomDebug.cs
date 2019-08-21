@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UnityUtilities.Assets.Utilities
+namespace UnityUtilities
 {
     public abstract class CustomDebug
     {

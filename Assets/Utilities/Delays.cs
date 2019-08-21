@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace UnityUtilities.Assets.Utilities
+namespace UnityUtilities
 {
     public static class Delays
     {
